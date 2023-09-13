@@ -11,6 +11,8 @@
  */
 declare(strict_types=1);
 
+namespace ScandiPWA\CatalogGraphQl\Model\Layer\Filter;
+
 use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\CatalogGraphQl\DataProvider\CategoryAttributesMapper;
 use Magento\CatalogGraphQl\DataProvider\Category\Query\CategoryAttributeQuery;
