@@ -11,8 +11,7 @@
  */
 declare(strict_types=1);
 
-namespace ScandiPWA\CatalogGraphQl\Model\Layer\Filter;
-
+use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\CatalogGraphQl\DataProvider\CategoryAttributesMapper;
 use Magento\CatalogGraphQl\DataProvider\Category\Query\CategoryAttributeQuery;
 use Magento\CatalogGraphQl\DataProvider\Product\LayeredNavigation\Builder\Aggregations\Category\IncludeDirectChildrenOnly;
@@ -50,15 +49,17 @@ class Category extends OriginalCategoryBuilder
         ResourceConnection $resourceConnection,
         LayerFormatter $layerFormatter,
         IncludeDirectChildrenOnly $includeDirectChildrenOnly,
+        CollectionFactory $categoryCollectionFactory,
         AttributeDataProvider $attributeDataProvider
     ) {
         parent::__construct(
-          $categoryAttributeQuery,
-          $attributesMapper,
-          $rootCategoryProvider,
-          $resourceConnection,
-          $layerFormatter,
-          $includeDirectChildrenOnly
+            $categoryAttributeQuery,
+            $attributesMapper,
+            $rootCategoryProvider,
+            $resourceConnection,
+            $layerFormatter,
+            $includeDirectChildrenOnly,
+            $categoryCollectionFactory,
         );
 
         $this->attributeDataProvider = $attributeDataProvider;
